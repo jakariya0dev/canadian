@@ -1,166 +1,161 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  </head>
-  <body>
-    <div class="container">
-        <table class="table table-bordered border-primary">
+@extends('layout.admin-master')
+
+@section('content')
+        <table class="table table-striped">
             <tr>
-                <td>A. Personal Particulars (As in Passport)</td>
+                <th colspan="6"><h5 class="text-secondary">A. Personal Particulars (As in Passport)</h5></th>
             </tr>
             <tr>
-                <td>Name:</td>
-                <td>{{ $user->name }}</td>
-                <td>Sure Name:</td>
-                <td>{{ $user->sure_name }}</td>
+                <th>Name:</th>
+                <td colspan="2">{{ $user->name }}</td>
+                <th>Sure Name:</th>
+                <td colspan="2">{{ $user->sure_name }}</td>
             </tr>
             <tr>
-                <td>Previous/other Name if any:</td>
-                <td>{{ $user->o_name }}</td>
+                <th>Previous/other Name if any:</th>
+                <td colspan="5">{{ $user->o_name }}</td>
             </tr>
             <tr>
-                <td>Sex:</td>
-                <td>{{ $user->gender }}</td>
-                <td>Married Status:</td>
-                <td>{{ $user->m_status }}</td>
+                <th>Sex:</th>
+                <td colspan="2">{{ $user->gender }}</td>
+                <th>Married Status:</th>
+                <td colspan="2">{{ $user->m_status }}</td>
             </tr>
             <tr>
-                <td>Date of birth:</td>
-                <td>{{ $user->dob }}</td>
-                <td>Religion:</td>
-                <td>{{ $user->religion }}</td>
+                <th>Date of birth:</th>
+                <td colspan="2">{{ $user->dob }}</td>
+                <th>Religion:</th>
+                <td colspan="2">{{ $user->religion }}</td>
             </tr>
             <tr>
-                <td>City/Place of birth:</td>
-                <td>{{ $user->pob }}</td>
-                <td>Country of Birth:</td>
-                <td>{{ $user->cob }}</td>
+                <th>City/Place of birth:</th>
+                <td colspan="2">{{ $user->pob }}</td>
+                <th>Country of Birth:</th>
+                <td colspan="2">{{ $user->cob }}</td>
             </tr>
             <tr>
-                <td>Citizenship /National ID No:</td>
-                <td>{{ $user->nid }}</td>
-                <td>Educational Qualification:</td>
-                <td>{{ $user->education }}</td>
+                <th>Citizenship /National ID No:</th>
+                <td colspan="2">{{ $user->nid }}</td>
+                <th>Educational Qualification:</th>
+                <td colspan="2">{{ $user->education }}</td>
             </tr>
             <tr>
-                <td>Visible Identification marks:</td>
-                <td>{{ $user->visibility }}</td>
-                <td>Current Nationality:</td>
-                <td>{{ $user->c_nation }} ({{  $user->n_type }})</td>
+                <th>Visible Identification marks:</th>
+                <td colspan="2">{{ $user->visibility }}</td>
+                <th>Current Nationality:</th>
+                <td colspan="2">{{ $user->c_nation }} ({{  $user->n_type }})</td>
             </tr>
             <tr>
-                <td>Any Other Previous/ Past Nationality:</td>
-                <td>{{ $user->o_nation }}</td>
+                <th>Any Other Previous/ Past Nationality:</th>
+                <td colspan="5">{{ $user->o_nation }}</td>
             </tr>
             <tr>
-                <td>B. Passport Details</td>
+                <th colspan="6"><h5 class="text-secondary">B. Passport Details</h5> </th>
             </tr>
             <tr>
-                <td>Passport No.:</td>
-                <td>{{ $user->pass_no }}</td>
-                <td>Date of issue ( dd/mm/yyyy ):</td>
-                <td>{{ $user->pass_doi }}</td>
+                <th>Passport No.:</th>
+                <td colspan="2">{{ $user->pass_no }}</td>
+                <th>Date of issue ( dd/mm/yyyy ):</th>
+                <td colspan="2">{{ $user->pass_doi }}</td>
             </tr>
             <tr>
-                <td Place of issue:</td>
-                <td>{{ $user->pass_poi }}</td>
-                <td>Date of expiry ( dd/mm/yyyy ):</td>
-                <td>{{ $user->pass_doe }}</td>
+                <th> Place of issue:</th>
+                <td colspan="2">{{ $user->pass_poi }}</td>
+                <th>Date of expiry ( dd/mm/yyyy ):</th>
+                <td colspan="2">{{ $user->pass_doe }}</td>
             </tr>
             <tr>
-                <td>Any other Passport/dentity Certificate held (if yes ,Please fill in the following</td>
+                <th colspan="6">Any other Passport/dentity Certificate held (if yes ,Please fill in the following</th>
             </tr>
             <tr>
-                <td>Passport No.:</td>
-                <td>{{ $user->op_no }}</td>
-                <td>Date of issue ( dd/mm/yyyy ):</td>
-                <td>{{ $user->op_doi }}</td>
+                <th>Passport No.:</th>
+                <td colspan="2">{{ $user->op_no }}</td>
+                <th>Date of issue ( dd/mm/yyyy ):</th>
+                <td colspan="2">{{ $user->op_doi }}</td>
             </tr>
             <tr>
-                <td Place of issue:</td>
-                <td>{{ $user->op_poi }}</td>
-                <td>Date of expiry ( dd/mm/yyyy ):</td>
-                <td>{{ $user->op_doe }}</td>
+                <th> Place of issue:</th>
+                <td colspan="2">{{ $user->op_poi }}</td>
+                <th>Date of expiry ( dd/mm/yyyy ):</th>
+                <td colspan="2">{{ $user->op_doe }}</td>
             </tr>
             <tr>
-                <td>C. Applicant’s Contact Details</td>
+                <th colspan="6"><h5 class="text-secondary">C. Applicant’s Contact Details</h5></th>
             </tr>
             <tr>
-                <td>Phone No:</td>
+                <th>Phone No:</th>
                 <td>{{ $user->phone }}</td>
-                <td>Mobile No:</td>
+                <th>Mobile No:</th>
                 <td>{{ $user->mobile }}</td>
-                <td>Email:</td>
+                <th>Email:</th>
                 <td>{{ $user->email }}</td>
             </tr>
             <tr>
-                <td>Present Address:</td>
-                <td>{{ $user->pre_address }}</td>
-                <td>Permanent Address:</td>
-                <td>{{ $user->per_address }}</td>
+                <th>Present Address:</th>
+                <td colspan="2">{{ $user->pre_address }}</td>
+                <th>Permanent Address:</th>
+                <td colspan="2">{{ $user->per_address }}</td>
             </tr>
             <tr>
-                <td>D. Family Details</td>
+                <th colspan="6"><h5 class="text-secondary">D. Family Details</h5></th>
             </tr>
             <tr>
-                <td>Relation</td>
-                <td>Name</td>
-                <td>Nationality</td>
-                <td>Prev. Nationality</td>
-                <td>Place/Country of Birth</td>
+                <th colspan="2">Relation</th>
+                <th>Name</th>
+                <th>Nationality</th>
+                <th>Prev. Nationality</th>
+                <th>Place/Country of Birth</th>
             </tr>
             <tr>
-                <td>Father</td>
+                <th colspan="2">Father</th>
                 <td>{{ $user->f_name }}</td>
                 <td>{{ $user->f_nation }}</td>
                 <td>{{ $user->f_cob }}</td>
+                <td></td>
             </tr>
             <tr>
-                <td>Mother</td>
+                <th colspan="2">Mother</th>
                 <td>{{ $user->m_name }}</td>
                 <td>{{ $user->m_nation }}</td>
                 <td>{{ $user->m_cob }}</td>
+                <td></td>
             </tr>
             <tr>
-                <td>Spouse</td>
+                <th colspan="2">Spouse</th>
                 <td>{{ $user->s_name }}</td>
                 <td>{{ $user->s_nation }}</td>
                 <td>{{ $user->s_cob }}</td>
+                <td></td>
             </tr>
             <tr>
-                <td>E. Details of Visa Sought</td>
+                <th colspan="6"><h5 class="text-secondary">E. Details of Visa Sought</h5></th>
             </tr>
             <tr>
-                <td>Type Of Visa Required:</td>
-                <td>{{ $user->tov }}</td>
-                <td>No of Entries:</td>
-                <td>{{ $user->noe }}</td>
+                <th>Type Of Visa Required:</th>
+                <td colspan="2">{{ $user->tov }}</td>
+                <th>No of Entries:</th>
+                <td colspan="2">{{ $user->noe }}</td>
             </tr>
             <tr>
-                <td>Period of Visa (Month):</td>
-                <td>{{ $user->pov }}</td>
-                <td>Expected Date of Journey:</td>
-                <td>{{ $user->edoj }}</td>
+                <th>Period of Visa (Month):</th>
+                <td colspan="2">{{ $user->pov }}</td>
+                <th>Expected Date of Journey:</th>
+                <td colspan="2">{{ $user->edoj }}</td>
             </tr>
             <tr>
-                <td>Port Of Arrival:</td>
-                <td>{{ $user->poa }}</td>
-                <td>Port Of Exit:</td>
-                <td>{{ $user->poe }}</td>
+                <th>Port Of Arrival:</th>
+                <td colspan="2">{{ $user->poa }}</td>
+                <th>Port Of Exit:</th>
+                <td colspan="2">{{ $user->poe }}</td>
             </tr>
 
             <tr>
-                <td>Status:</td>
-                <td>{{ $user->status }}</td>
-                <td>Password:</td>
-                <td>{{ $user->password }}</td>
+                <th>Status:</th>
+                <td colspan="2">{{ $user->status }}</td>
+                <th>Password:</th>
+                <td colspan="2">{{ $user->password }}</td>
             </tr>
         </table>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  </body>
-</html>
+        <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
+        <a href="{{ route('user.delete', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
+@endsection
