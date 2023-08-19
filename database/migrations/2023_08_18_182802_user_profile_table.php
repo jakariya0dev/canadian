@@ -14,56 +14,57 @@ return new class extends Migration
         Schema::create('user_profile', function(Blueprint $table){
             $table->id();
 
-            $table->text('sure_name');
-            $table->text('name');
-            $table->text('o_name');
-            $table->text('gender');
-            $table->text('m_status');
-            $table->text('religion');
-            $table->text('dob');
-            $table->text('pob');
-            $table->text('cob');
-            $table->text('nid');
-            $table->text('education');
-            $table->text('visibility');
-            $table->text('c_nation');
-            $table->text('n_type');
-            $table->text('o_nation');
+            $table->string('sure_name', 100);
+            $table->string('name', 100);
+            $table->string('o_name', 100);
+            $table->string('gender', 100);
+            $table->string('m_status', 100);
+            $table->string('religion', 100);
+            $table->date('dob', 100);
+            $table->string('pob', 100);
+            $table->string('cob', 100);
+            $table->string('nid', 100);
+            $table->string('education', 100);
+            $table->string('visibility', 100);
+            $table->string('c_nation', 100);
+            $table->string('n_type', 100);
+            $table->string('o_nation', 100);
 
-            $table->text('pass_no');
-            $table->text('pass_doi');
-            $table->text('pass_poi');
-            $table->text('pass_doe');
-            $table->text('op_no');
-            $table->text('op_doi');
-            $table->text('op_poi');
-            $table->text('op_doe');
+            $table->string('pass_no', 100);
+            $table->date('pass_doi', 100);
+            $table->string('pass_poi', 100);
+            $table->date('pass_doe', 100);
+            $table->string('op_no', 100);
+            $table->date('op_doi', 100);
+            $table->string('op_poi', 100);
+            $table->date('op_doe', 100);
 
-            $table->text('phone');
-            $table->text('mobile');
-            $table->text('email');
+            $table->string('phone', 100);
+            $table->string('mobile', 100)->unique();
+            $table->string('email', 100);
             $table->text('pre_address');
             $table->text('per_address');
             
-            $table->text('f_name');
-            $table->text('f_nation');
-            $table->text('f_cob');
-            $table->text('m_name');
-            $table->text('m_nation');
-            $table->text('m_cob');
-            $table->text('s_name');
-            $table->text('s_nation');
-            $table->text('s_cob');
+            $table->string('f_name', 100);
+            $table->string('f_nation', 100);
+            $table->string('f_cob', 100);
+            $table->string('m_name', 100);
+            $table->string('m_nation', 100);
+            $table->string('m_cob', 100);
+            $table->string('s_name', 100);
+            $table->string('s_nation', 100);
+            $table->string('s_cob', 100);
 
-            $table->text('tov');
-            $table->text('noe');
-            $table->text('pov');
-            $table->text('poa');
-            $table->text('poe');
-            $table->text('status');
-            $table->text('password');
+            $table->string('tov', 100);
+            $table->string('noe', 100);
+            $table->string('pov', 100);
+            $table->date('edoj', 100);
+            $table->string('poa', 100);
+            $table->string('poe', 100);
+            $table->string('status', 100);
+            $table->string('password', 100);
             
-
+            $table->timestamps();
         });
     }
 

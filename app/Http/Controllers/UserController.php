@@ -6,7 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class addNewUserData extends Controller
+class UserController extends Controller
 {
     function addNewProfile(Request $request){
 
@@ -61,10 +61,28 @@ class addNewUserData extends Controller
             'poe' => $request['poe'],
             'status' => $request['status'],
             'password' => Str::random(10),
-            // 'password' => $request['password'],
         ]);
 
         dd($arow);
+
+    }
+
+    function getAllProfile(){
+        $users = DB::table('user_profile')->paginate(25);
+        return view('all-profile', ['users' => $users]);
+
+    }
+
+    function getSingleProfile($id){
+        $user = DB::table('user_profile')->find($id);
+        return view('user-profile', ['user' => $user]);
+        // dd($user);
+    }
+
+    function deleteProfile($id){
+        $status = DB::table('user_profile')->where('id', $id)->delete();
+        return redirect()->route('users.profile');
+        
 
     }
 }
