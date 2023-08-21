@@ -154,4 +154,15 @@ class UserController extends Controller
         return redirect()->route('users.profile');
 
     }
+
+    function userLogin(Request $request){
+
+        $user = DB::table('user_profile')
+        ->where('email', $request['user-email'])
+        ->Where('password', $request['user-password'])
+        ->first();
+        
+        // dd($user);
+        return view('profile', ['user' => $user]);
+    }
 }
