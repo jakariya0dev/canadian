@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
+
     function addNewProfile(Request $request){
 
         $arow = DB::table('user_profile')->insert([
@@ -67,26 +68,25 @@ class UserController extends Controller
 
     function getAllProfile(){
         $users = DB::table('user_profile')->paginate(25);
-        return view('all-profile', ['users' => $users]);
+        return view('backend.all-profile', ['users' => $users]);
 
     }
 
     function getSingleProfile($id){
         $user = DB::table('user_profile')->find($id);
-        return view('user-profile', ['user' => $user]);
-        // dd($user);
+        return view('backend.user-profile', ['user' => $user]);
+    
     }
 
     function deleteProfile($id){
         $status = DB::table('user_profile')->where('id', $id)->delete();
         return redirect()->route('users.profile');
         
-
     }
 
     function userUpdate($id){
         $user = DB::table('user_profile')->find($id);
-        return view('update-profile', ['user' => $user]);
+        return view('backend.update-profile', ['user' => $user]);
     }
 
     function searchProfile(Request $request){
@@ -94,7 +94,7 @@ class UserController extends Controller
                     ->where('mobile', $request['keyword'])
                     ->orWhere('email', $request['keyword'])
                     ->paginate(25);
-        return view('all-profile', ['users' => $users]);
+        return view('backend.all-profile', ['users' => $users]);
         // dd($users);
     }
 
@@ -162,7 +162,7 @@ class UserController extends Controller
         ->Where('password', $request['user-password'])
         ->first();
         
-        // dd($user);
-        return view('profile', ['user' => $user]);
+        return view('backend.profile', ['user' => $user]);
     }
+    
 }

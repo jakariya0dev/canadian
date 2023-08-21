@@ -20,7 +20,7 @@
                   <a class="nav-link" aria-current="page" href="{{ route('users.profile') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('new.profile') }}">Add profile</a>
+                  <a class="nav-link" href="{{ route('new.profile.form') }}">Add profile</a>
                 </li>
               
               </ul>

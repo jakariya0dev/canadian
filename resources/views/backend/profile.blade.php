@@ -1,4 +1,4 @@
-@extends('layout.admin-master')
+@extends('backend.admin-master')
 
 @section('content')
         <table class="table table-striped">

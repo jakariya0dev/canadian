@@ -1,22 +1,3 @@
-@extends('frontend.master-layout')
-
-@section('content')
-
-<main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/about-header.jpg');">
-      <div class="container position-relative d-flex flex-column align-items-center">
-
-        <h2>About</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>About</li>
-        </ol>
-
-      </div>
-    </div><!-- End Breadcrumbs -->
-
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
@@ -53,7 +34,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Why Choose Us</h2>
+          <h2>How We Work</h2>
 
         </div>
 
@@ -104,20 +85,6 @@
 
       </div>
     </section><!-- End Why Choose Us Section -->
-
-    <!-- ======= Call To Action Section ======= -->
-    <section id="call-to-action" class="call-to-action">
-      <div class="container" data-aos="fade-up">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h3>Ut fugiat aliquam aut non</h3>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-            <a class="cta-btn" href="#">Call To Action</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Call To Action Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
@@ -207,6 +174,3 @@
       </div>
     </section><!-- End Team Section -->
 
-  </main><!-- End #main -->
-
-@endsection

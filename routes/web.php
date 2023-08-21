@@ -5,15 +5,11 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::view('/', 'frontend.home')->name('home');
-Route::view('/about', 'frontend.about')->name('about');
-Route::view('/contact', 'frontend.about')->name('contact');
-Route::view('/team', 'frontend.about')->name('team');
+Route::view('/', 'frontend.app')->name('home');
 Route::view('/tos', 'frontend.about')->name('tos');
-Route::view('/services', 'frontend.about')->name('services');
 Route::view('/p-policy', 'frontend.about')->name('p.policy');
 
-Route::view('/user-login-form', 'user-login')->name('user.login.form');
+Route::view('/user-login-form', 'backend.user-login')->name('user.login.form');
 
 Route::get('/user-login', [UserController::class, 'userLogin'])->name('user.login');
 Route::get('/admin-login', [UserController::class, 'getAllProfile'])->name('admin.login');
@@ -21,7 +17,7 @@ Route::get('/admin-login', [UserController::class, 'getAllProfile'])->name('admi
 Route::get('/users-profile', [UserController::class, 'getAllProfile'])->name('users.profile');
 Route::get('/user-profile/{id}', [UserController::class, 'getSingleProfile'])->name('user.profile');
 Route::get('/user-update/{id}', [UserController::class, 'userUpdate'])->name('user.update');
-Route::view('/new-profile', 'application-form')->name('new.profile');
+Route::view('/new-profile-form', 'backend.application-form')->name('new.profile.form');
 
 Route::post('/add-profile', [UserController::class, 'addNewProfile'])->name('add.profile');
 Route::get('/delete-user/{id}', [UserController::class, 'deleteProfile'])->name('user.delete');
