@@ -1,5 +1,5 @@
 
-@include('backend.user-master')
+@include('backend.admin.user-master')
 
 @section('content')
 

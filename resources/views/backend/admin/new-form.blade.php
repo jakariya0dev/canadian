@@ -1,7 +1,7 @@
-@extends('backend.admin-master')
+@extends('backend.admin.admin-master')
 
 @section('content')
-        <form class="g-3" method="POST" action="{{ route('add.profile') }}">
+        <form class="g-3" method="POST" action="{{ route('profile.add') }}" enctype="multipart/form-data">
             @csrf
             @method('post')
 
@@ -263,7 +263,11 @@
                 <div class="col-md-6">
                     <label for="status" class="form-label">Visa Status</label>
                     <input name="status" type="text" class="form-control" id="status">
-                  </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="pro_pic" class="form-label">Profile Picture</label>
+                    <input name="pro_pic" type="file" class="form-control" id="pro_pic">
+                </div>
             </div>
 
             <div class="col-12">

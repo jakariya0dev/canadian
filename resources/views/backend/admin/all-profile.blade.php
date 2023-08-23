@@ -1,4 +1,4 @@
-@extends('backend.admin-master')
+@extends('backend.admin.admin-master')
 
 @section('content')
     <table class="table">
@@ -18,9 +18,9 @@
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->mobile }}</td>
                 <th scope="col">
-                  <a href="{{ route('user.profile', $user->id) }}" class="btn btn-sm btn-primary">View</a>
-                  <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                  <a href="{{ route('user.delete', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                  <a href="{{ route('profile.view', $user->id) }}" class="btn btn-sm btn-primary">View</a>
+                  <a href="{{ route('profile.edit', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                  <a href="{{ route('profile.delete', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
               </th>
               </tr>
             @endforeach

@@ -62,6 +62,7 @@ return new class extends Migration
             $table->string('poa', 100);
             $table->string('poe', 100);
             $table->string('status', 100);
+            $table->string('pro_pic', 100)->nullable();
             $table->string('password', 100);
             
             $table->timestamps();

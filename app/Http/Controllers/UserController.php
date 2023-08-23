@@ -11,6 +11,9 @@ class UserController extends Controller
 
     function addNewProfile(Request $request){
 
+        $image = time().'.'.$request->file('pro_pic')->getClientOriginalExtension();
+        $request->file('pro_pic')->storeAs('public/images/pro_pic', $image);
+
         $arow = DB::table('user_profile')->insert([
             'sure_name' => $request['sure_name'],
             'name' => $request['name'],
@@ -57,36 +60,38 @@ class UserController extends Controller
             'noe' => $request['noe'],
             'pov' => $request['pov'],
             'poa' => $request['poa'],
+            'edoj' => $request['edoj'],
             'poe' => $request['poe'],
             'status' => $request['status'],
+            'pro_pic' => $image,
             'password' => Str::random(10),
         ]);
 
-       return redirect()->route('users.profile');
+       return redirect()->route('profile.all');
 
     }
 
     function getAllProfile(){
-        $users = DB::table('user_profile')->paginate(25);
-        return view('backend.all-profile', ['users' => $users]);
+        $users = DB::table('user_profile')->orderByDesc('id')->paginate(25);
+        return view('backend.admin.all-profile', ['users' => $users]);
 
     }
 
     function getSingleProfile($id){
         $user = DB::table('user_profile')->find($id);
-        return view('backend.user-profile', ['user' => $user]);
+        return view('backend.admin.view-profile', ['user' => $user]);
     
     }
 
     function deleteProfile($id){
         $status = DB::table('user_profile')->where('id', $id)->delete();
-        return redirect()->route('users.profile');
+        return redirect()->route('profile.all');
         
     }
 
-    function userUpdate($id){
+    function editProfile($id){
         $user = DB::table('user_profile')->find($id);
-        return view('backend.update-profile', ['user' => $user]);
+        return view('backend.admin.edit-profile', ['user' => $user]);
     }
 
     function searchProfile(Request $request){
@@ -94,7 +99,7 @@ class UserController extends Controller
                     ->where('mobile', $request['keyword'])
                     ->orWhere('email', $request['keyword'])
                     ->paginate(25);
-        return view('backend.all-profile', ['users' => $users]);
+        return view('backend.admin.all-profile', ['users' => $users]);
         // dd($users);
     }
 
@@ -151,7 +156,7 @@ class UserController extends Controller
             'password' => Str::random(10),
         ]);
 
-        return redirect()->route('users.profile');
+        return redirect()->route('profile.all');
 
     }
 
@@ -162,7 +167,7 @@ class UserController extends Controller
         ->Where('password', $request['user-password'])
         ->first();
         
-        return view('backend.profile', ['user' => $user]);
+        return view('backend.user.user-profile', ['user' => $user]);
     }
     
 }

@@ -1,4 +1,4 @@
-@extends('backend.admin-master')
+@extends('backend.admin.admin-master')
 
 @section('content')
         <form class="g-3" method="POST" action="{{ route('profile.update') }}">

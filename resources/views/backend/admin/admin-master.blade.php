@@ -17,14 +17,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{{ route('users.profile') }}">Home</a>
+                  <a class="nav-link" aria-current="page" href="{{ route('profile.all') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('new.profile.form') }}">Add profile</a>
+                  <a class="nav-link" href="{{ route('profile.new') }}">Add profile</a>
                 </li>
               
               </ul>
-              <form class="d-flex" role="search" action="{{ route('user.search') }}">
+              <form class="d-flex" role="search" action="{{ route('profile.search') }}">
                 <input name="keyword" class="form-control me-2" type="search" placeholder="Phone or Email" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
