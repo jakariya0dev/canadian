@@ -12,8 +12,8 @@ Route::view('/p-policy', 'frontend.about')->name('p.policy');
 
 
 // User Route
-Route::view('/user-login-form', 'backend.user-login')->name('user.login.form');
-Route::get('/user-login', [UserController::class, 'userLogin'])->name('user.login');
+Route::view('/user-form', 'backend.user.user-form')->name('user.form');
+Route::get('/user-profile', [UserController::class, 'userLogin'])->name('user.profile');
 
 
 // Admin Route

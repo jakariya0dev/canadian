@@ -1,10 +1,14 @@
-@extends('backend.admin-master')
+@extends('backend.user.user-master')
 
 @section('content')
 <br><br>
         <div class="container mt-5">
             <div class="row">
                 <table class="table table-striped">
+                    <tr>
+                        <td colspan="5"></td>
+                        <td><img class="img-thumbnail" src="{{ asset('storage/images/pro_pic/'.$user->pro_pic) }}" alt=""></td>
+                    </tr>
                     <tr>
                         <th colspan="6"><h5 class="text-secondary">A. Personal Particulars (As in Passport)</h5></th>
                     </tr>
@@ -159,9 +163,6 @@
                         <td colspan="2">{{ $user->password }}</td>
                     </tr>
                 </table>
-                <a href="{{ route('user.update', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                <br>
-                <a href="{{ route('user.delete', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
             </div>
         </div>
 

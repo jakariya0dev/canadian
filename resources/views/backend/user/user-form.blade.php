@@ -1,4 +1,4 @@
-@extends('backend.user-master')
+@extends('backend.user.user-master')
 
 @section('content')
     <div class="container">
@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h5 class="my-3 text-center card-title">User Login</h5>
                         <br>
-                        <form action="{{ route('user.login') }}">
+                        <form action="{{ route('user.profile') }}">
                             
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>

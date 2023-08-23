@@ -18,10 +18,8 @@
               <li><a href="#about">About</a></li>
               <li><a href="#team">Team</a></li>
               <li><a href="#contact">Contact</a></li>
-             
-              
               <li><a href="{{ route('admin.login') }}">Admin Login</a></li>
-              <li><a href="{{ route('user.login.form') }}">User Login</a></li>
+              <li><a href="{{ route('user.form') }}">User Login</a></li>
               
             </ul>
           </nav><!-- .navbar -->
